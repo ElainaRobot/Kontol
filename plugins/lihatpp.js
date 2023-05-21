@@ -12,14 +12,14 @@ let handler = async (m, { conn }) => {
     let username = conn.getName(who)
     let str = `
 ✧───────[ *PROFILE* ]───────✧
-📇 • *Name:* ${username} ${registered ? '(' + name + ') ': ''}
-📧 • *Tag:* @${who.replace(/@.+/, '')}
-📞 • *Number:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-💻 • *Link:* https://wa.me/${who.split`@`[0]}
+📇 • *ɴᴀᴍᴇ:* ${username} ${registered ? '(' + name + ') ': ''}
+📧 • *ᴛᴀɢ:* @${who.replace(/@.+/, '')}
+📞 • *ɴᴜᴍʙᴇʀ:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+💻 • *ʟɪɴᴋ:* https://wa.me/${who.split`@`[0]}
 ${registered ? '🎨 • *Age:* ' + age : ''}
-🌟 • *Premium:* ${premium ? "✅" :"❌"}
-📑 • *Registered:* ${registered ? '✅': '❌'}
-⛔ • *Banned:* ❌
+🌟 • *ᴘʀᴇᴍɪᴜᴍ:* ${premium ? "✅" :"❌"}
+📑 • *ʀᴇɢɪsᴛᴇʀᴇᴅ:* ${registered ? '✅': '❌'}
+⛔ • *ʙᴀɴɴᴇᴅ:* ❌
 `.trim()
     let mentionedJid = [who]
     conn.sendFile(m.chat, await(await require('node-fetch')(pp)).buffer(), pp.jpg, str, m, false, { contextInfo: { mentionedJid }})
